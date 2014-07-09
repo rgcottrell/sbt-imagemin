@@ -1,0 +1,7 @@
+# Optimize images.
+
+> web-stage
+$ exists target/web/stage/img/play.png
+$ exists target/web/stage/img/play.svg
+
+> checkImageSizes

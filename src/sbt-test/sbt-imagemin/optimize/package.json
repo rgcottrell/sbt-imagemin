@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "imagemin": "^0.4.6"
+  }
+}
