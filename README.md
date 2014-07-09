@@ -1,5 +1,6 @@
 sbt-imagemin
 =============
+[![Build Status](https://travis-ci.org/rgcottrell/sbt-imagemin.svg?branch=master)](https://travis-ci.org/rgcottrell/sbt-imagemin)
 
 [sbt-web](https://github.com/sbt/sbt-web) plugin that optimizes images using [imagemin](https://github.com/kevva/imagemin) on the asset pipeline.
 
