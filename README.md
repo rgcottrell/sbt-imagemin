@@ -7,8 +7,13 @@ sbt-imagemin
 To use the latest version from GitHub, add the following to the `project/plugins.sbt` of your project:
 
 ```scala
-lazy val root = project.in(file(".")).dependsOn(sbtFilter)
-lazy val sbtFilter = uri("git://github.com/rgcottrell/sbt-imagemin")
+addSbtPlugin("com.slidingautonomy.sbt" % "sbt-imagemin" % "1.0.0")
+```
+
+Add the Sonatype releases resolver:
+
+```scala
+resolvers += Resolver.sonatypeRepo("releases")
 ```
 
 Your project's build file also needs to enable sbt-web plugins. For example with build.sbt:
@@ -25,7 +30,8 @@ pipelineStages := Seq(imagemin)
 
 ## Configuration
 
-The plugin will optimize JPEG, GIF, PNG and SVG images for display on the web with a minimum amount of configuration. The default options are:
+The plugin will optimize JPEG, GIF, PNG and SVG images for display on the web with a minimum amount of configuration.
+The default options are:
 
 ```scala
 ImageMinKeys.progressive       := true  // lossless conversion to progressive JPEG images 
