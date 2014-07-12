@@ -10,12 +10,6 @@ To use the latest version from GitHub, add the following to the `project/plugins
 addSbtPlugin("com.slidingautonomy.sbt" % "sbt-imagemin" % "1.0.0")
 ```
 
-Add the Sonatype releases resolver:
-
-```scala
-resolvers += Resolver.sonatypeRepo("releases")
-```
-
 Your project's build file also needs to enable sbt-web plugins. For example with build.sbt:
 
 ```scala
