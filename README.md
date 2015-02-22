@@ -7,7 +7,7 @@ sbt-imagemin
 To use the latest version from GitHub, add the following to the `project/plugins.sbt` of your project:
 
 ```scala
-addSbtPlugin("com.slidingautonomy.sbt" % "sbt-imagemin" % "1.0.0")
+addSbtPlugin("com.slidingautonomy.sbt" % "sbt-imagemin" % "1.0.1")
 ```
 
 Your project's build file also needs to enable sbt-web plugins. For example with build.sbt:
@@ -51,7 +51,7 @@ include a package.json file at the root of your project:
 ```json
 {
   "dependencies": {
-    "imagemin": "^0.4.6"
+    "imagemin": "^3.1.0"
   }
 }
 ```
