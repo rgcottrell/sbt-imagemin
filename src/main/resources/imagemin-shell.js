@@ -23,7 +23,7 @@ var results = [];
 var problems = [];
 sourceFileMappings.forEach(function(sourceFileMapping) {
   var input = sourceFileMapping[0];
-  var output = path.join(target, sourceFileMapping[1]);
+  var output = path.join(target, sourceFileMapping[1]).match(/(.*)[/\\]{1}[^/\\]+/)[1];
 
   try {
     var imagemin = new Imagemin()
@@ -34,10 +34,11 @@ sourceFileMappings.forEach(function(sourceFileMapping) {
       .use(Imagemin.optipng({ optimizationLevel: optimizationLevel }))
       .use(Imagemin.svgo());
 
-    imagemin.optimize(function(err, data) {
+    imagemin.run(function(err, data) {
       if (err) {
         throw err;
       }
+
       results.push({
         source: input,
         result: {
@@ -48,7 +49,7 @@ sourceFileMappings.forEach(function(sourceFileMapping) {
     });
   } catch (e) {
     problems.push({
-        message: err,
+        message: e,
         severity: "error",
         source: input
     });
